@@ -14,12 +14,39 @@ function divide(number1, number2) {
   return number1 / number2;
 }
 
-const number1 = parseInt(prompt("Enter your a number-_-"));
-const number2 = parseInt(prompt("Enter another number-_-"));
-const result = divide(number1, number2);
-alert(result);
+$(document).ready(function() {
+  $("form#add").submit(function(event) {
+    event.preventDefault();
+    const userNumber1 = parseInt($("#add1").val());
+    const userNumber2 = parseInt($("#add2").val());
+    const result = add(userNumber1, userNumber2);
+    $("#output").text(result);
+  });
 
+  $("form#subtract").submit(function(event) {
+    event.preventDefault();
+    const userNumber1 = parseInt($("#subtract1").val());
+    const userNumber2 = parseInt($("#subtract2").val());
+    const result = subtract(userNumber1, userNumber2);
+    $("#output").text(result);
+  });
 
+  $("form#multiply").submit(function(event) {
+    event.preventDefault();
+    const userNumber1 = parseInt($("#multiply1").val());
+    const userNumber2 = parseInt($("#multiply2").val());
+    const result = multiply(userNumber1, userNumber2);
+    $("#output").text(result);
+  });
+
+  $("form#divide").submit(function(event) {
+    event.preventDefault();
+    const userNumber1 = parseInt($("#divide1").val());
+    const userNumber2 = parseInt($("#divide2").val());
+    const result = divide(userNumber1, userNumber2);
+    $("#output").text(result);
+  });
+});
 
 
 
